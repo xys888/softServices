@@ -10,8 +10,8 @@ spring:
     nacos:
       discovery:
         # 告诉当前项目nacos-server所在的地址
-        server-addr: localhost:8848
+        server-addr: 47.95.253.11:8848
 
 server:
   # ip 就不用写了 192.168.56.1
-  port: 9093
+  port: 9092

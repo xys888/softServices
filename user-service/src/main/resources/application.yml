@@ -6,7 +6,7 @@ spring:
     nacos:
       discovery:
         # 告诉当前项目nacos-server所在的地址
-        server-addr: localhost:8848
+        server-addr: 47.95.253.11:8848
         
 
 server:
