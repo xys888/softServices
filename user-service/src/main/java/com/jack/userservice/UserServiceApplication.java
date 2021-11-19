@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+//feign注解
 @EnableFeignClients
 public class UserServiceApplication {
 

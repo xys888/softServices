@@ -1,0 +1,31 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.95.253.11:8848
+    gateway:
+      discovery:
+        locator:
+          # gateway能够进行服务发现
+          # localhost:8090/user-service/user/hello  ---> localhost:8081/user/hello
+          enabled: true
+      # 自定义路由规则
+      routes:
+        # 路由的匹配条件
+        - predicates:
+            - Path=/xys666/**
+          filters:
+            # 表示在将请求发送到下游之前从请求中剥离的路径个数，1表示从二级url路径转发
+            - StripPrefix=1
+          uri: http://localhost:8081/    # localhost:8090/xys666/user/hello ---> localhost:8081/user/hello
+  
+          # localhost:8090/xys666/user/testOpenFeign ---> localhost:8090  ---->   localhost:8081   ----->   localhost:9091
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1.0

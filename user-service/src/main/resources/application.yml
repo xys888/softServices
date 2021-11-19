@@ -7,10 +7,35 @@ spring:
       discovery:
         # 告诉当前项目nacos-server所在的地址
         server-addr: 47.95.253.11:8848
-        
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+  zipkin:
+    base-url: http://localhost:9411
+    discoveryClientEnabled: false
+  sleuth:
+    sampler:
+      probability: 1.0
 
 server:
   # ip 就不用写了 192.168.56.1
   port: 8081
-  
-  
+
+# feign日志级别属性配置
+
+
+logging:
+  level: # 这边写自己FeignClient的全路径  
+#    com.csdn.userservice.feignclient.OrderServiceFeignClient: debug
+    com.jack.userservice.openfeign.OrderServiceFeignClient: debug
+feign:
+  client:
+    config:
+      order-service:
+        loggerLevel: full
+#  httpclient:
+#    enabled: true
+#    max-connections: 200
+#    max-connections-per-route: 50
+
+

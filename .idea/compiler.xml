@@ -2,12 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-cloud-demo" />
         <module name="order-service" />
+        <module name="shop-gateway" />
+        <module name="spring-cloud-demo" />
         <module name="user-service" />
       </profile>
     </annotationProcessing>
@@ -19,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="demo" options="-parameters" />
       <module name="order-service" options="-parameters" />
+      <module name="shop-gateway" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>
